@@ -1,15 +1,19 @@
+window.addEventListener('load', () => {
+    document.querySelector('.preloader').style.display = 'none';
+});
+
 const PX_RATIO = window.devicePixelRatio;
 
 Math.dist = (dx, dy) => {
-    return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2))
+    return Math.sqrt(Math.pow(dx, 2) + Math.pow(dy, 2));
 }
 
 class Cursor {
     constructor() {
         this.container = window["cursor"];
         this.shape = window["cursor-shape"];
-        this.translation = {x:1,y:1};
-        this.mouse =  {x:window.innerWidth/2,y:window.innerHeight/2};
+        this.translation = { x: 1, y: 1 };
+        this.mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
         this.precision = 2;
         this.scale = 1;
         this.rotation = 1;
@@ -46,7 +50,6 @@ class Cursor {
         this.translation.y += this.dy * this.friction;
 
         this.rotation = Math.atan2(this.dy, this.dx) * 180 / Math.PI;
-
     }
 
     render() {
