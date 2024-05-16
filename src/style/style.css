@@ -7,7 +7,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    cursor: none; /* Hide the default cursor */
 }
 
 .container {
@@ -21,8 +20,8 @@ body {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center align the content */
-    text-align: center; /* Center align the text */
+    justify-content: center;
+    text-align: center;
 }
 
 .header-content .header-text {
@@ -76,14 +75,13 @@ section {
     width: 40px;
     height: 40px;
     transition: transform 0.3s, opacity 0.3s, border-radius 0.3s;
-    cursor: none;
+    cursor: pointer;
 }
 
 .social-icon:hover img {
     transform: scale(1.2);
     opacity: 0.8;
     border-radius: 50%;
-    cursor: none;
 }
 
 .project {
@@ -95,48 +93,39 @@ section {
     width: 100%;
     max-width: 300px;
     margin: 10px auto;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project img {
     width: 100%;
     border-radius: 10px;
+    transition: transform 0.3s;
 }
 
 .project h3 {
     margin: 10px 0;
     font-size: 1.2em;
 }
+
 .project:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
 }
-.project-links a:hover {
-    color: #fff;
-}
 
-.project::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.3s;
-}
-
-.project:hover::before {
-    opacity: 1;
-}
-
-.project img:hover {
+.project:hover img {
     transform: scale(1.1);
 }
+
 .project-links a {
     color: #0f0;
     text-decoration: none;
     margin: 0 10px;
+}
+
+.project-links a:hover {
+    color: #fff;
 }
 
 .projects-grid {
@@ -219,7 +208,7 @@ section {
 
 .wire {
     width: 4px;
-    height: 70px ;
+    height: 70px;
     background: black;
     position: relative;
     z-index: 1;
@@ -286,159 +275,39 @@ section {
     0% {
         transform: rotate(15deg);
     }
-
     50% {
         transform: rotate(-15deg);
     }
-
     100% {
         transform: rotate(15deg);
     }
 }
 
 @keyframes flash {
-    0% {
+    0%, 100% {
         background: rgba(255, 255, 255, 0.1);
         box-shadow: 0px 0px 0px 0px transparent;
     }
-
-    1% {
+    5%, 55%, 85% {
+        background: rgba(255, 235, 0, 1);
+        box-shadow: 0px 0px 75px 25px rgba(245, 223, 77, 0.8);
+    }
+    15%, 40%, 70% {
+        background: rgba(255, 235, 0, 0.8);
+        box-shadow: 0px 0px 100px 50px rgba(245, 223, 77, 0.6);
+    }
+    25% {
         background: rgba(255, 235, 0, 1);
         box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
     }
-
-    1.001% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
+    55.5%, 75.5% {
+        background: rgba(255, 235, 0, 0.5);
+        box-shadow: 0px 0px 50px 20px rgba(245, 223, 77, 0.5);
     }
-
-    10% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    11.001% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    11.002% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    12% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    39.999% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    40% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    41% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    41.001% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
     75% {
         background: rgba(255, 255, 255, 0.1);
         box-shadow: 0px 0px 0px 0px transparent;
     }
-
-    75.5% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    75.501% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    80% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    81.001% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    81.002% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    82% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    82.001% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    82.002% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    83% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    83.001% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    83.002% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-
-    83.003% {
-        background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0px 0px 0px 0px transparent;
-    }
-
-    88% {
-        background: rgba(255, 235, 0, 1);
-        box-shadow: 0px 0px 150px 75px rgba(245, 223, 77, 1);
-    }
-}
-
-#cursor {
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-}
-
-#cursor-shape {
-    width: 32px;
-    height: 32px;
-    margin-top: -50%;
-    margin-left: -50%;
-    border-radius: 50%;
-    border: 2px solid #F2DA63;
-    background-color: #F24464;
 }
 
 /* Responsive Styles */
@@ -509,6 +378,7 @@ section {
         flex-direction: column;
     }
 }
+
 /* Experience Section */
 #experience {
     padding: 20px 0;
@@ -611,6 +481,7 @@ section {
     margin-bottom: 10px;
     color: #ddd;
 }
+
 .timeline-icon img {
     width: 100%;
     height: 100%;
