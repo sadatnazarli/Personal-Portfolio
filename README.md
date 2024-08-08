@@ -34,7 +34,7 @@ This portfolio website is built to highlight my skills, projects, and experience
 
 ## Live Website
 
-You can view the live website [here](https://yourwebsiteurl.com).
+You can view the live website [here](https://sadatnazarli.netlify.app/).
 
 ## Usage
 
