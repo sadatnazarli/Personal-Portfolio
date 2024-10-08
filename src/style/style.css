@@ -416,12 +416,14 @@ height: 300px;
 font-size: 28px;
 }
 .skill-box {
-width: 80px;
-height: 80px;
+    margin-top: 20px;
+width: 90px;
+height: 90px;
 }
 .skill-box img {
-width: 40px;
-height: 40px;
+    margin-top: 20px;
+width: 50px;
+height: 50px;
 }
 .timeline-item {
 width: 100%;
